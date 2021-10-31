@@ -1,9 +1,9 @@
 # HDL
 Every HDL "program" has two parts: a header and a body.
 
-## Structure of a program
+## Structure of a Program
 
-```verilog
+```swift
 CHIP Xor {
     IN a, b; // a and b are input pins
     OUT out; // out is an output pin
