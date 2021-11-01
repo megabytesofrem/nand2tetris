@@ -1,14 +1,20 @@
-# Implemented Gates
-- And
-- Not
-- Or
-- Xor
-- And16
-- Not16
-- Or16
+# Gates
+- [x] And16.hdl
+- [x] And.hdl
+- [ ] DMux4Way.hdl
+- [ ] DMux8Way.hdl
+- [ ] DMux.hdl
+- [ ] Mux16.hdl
+- [ ] Mux4Way16.hdl
+- [ ] Mux8Way16.hdl
+- [x] Mux.hdl
+- [x] Not16.hdl
+- [x] Not.hdl
+- [x] Or16.hdl
+- [x] Or8Way.hdl
+- [x] Or.hdl
+- [x] Xor.hdl
 
-## Multiplexers
-- Mux
 
 ## Notes
 - AND can be implemented by inverting the signal from a Nand gate using NOT.
