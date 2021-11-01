@@ -9,10 +9,34 @@
  *       b otherwise
  */
 
+/**
+ * If sel = 0 then out = a else out = b
+
+    +-----+---+---+-----+
+    | sel | a | b | out |
+    +-----+---+---+-----+
+    |   0 | 0 | 0 | a=0 |
+    |   0 | 0 | 1 | a=0 |
+    |   0 | 1 | 0 | a=1 |
+    |   0 | 1 | 1 | a=1 |
+    |   1 | 0 | 0 | b=0 |
+    |   1 | 0 | 1 | b=1 |
+    |   1 | 1 | 0 | b=0 |
+    |   1 | 1 | 1 | b=1 |
+    +-----+---+---+-----+
+ */
+
 CHIP Mux {
     IN a, b, sel;
     OUT out;
 
     PARTS:
     // Put your code here:
+    // Q = D0 !S + D1 S
+    // https://www.electronicshub.org/multiplexerandmultiplexing/#2-to-1_Multiplexer
+
+    Not(in=sel, out=notSel);
+    And(a=a, b=notSel, out=w1);
+    And(a=b, b=sel, out=w2);
+    Or(a=w1, b=w2, out=out);
 }
